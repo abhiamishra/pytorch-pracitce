@@ -99,3 +99,59 @@
     - which index location give us the maximum value in a tensor
     - tensor is reduced to a tensor which indicates where the max value is
 
+# Why Study A Dataset
+- Who created the dataset
+- How was it created
+- What transformations were used
+- What intent does dataset have
+- Possilble consequences
+- Fashion MNIST Dataset
+    - has 10 classes (intentional to imitate MNIST)
+- ETL Process
+    - Extract the data
+    - Transform the data
+    - Load the data
+- Dataset Class
+    - must implement __len__ method and __getitem__ method
+    - abstract class that we can use to reprsent our dataset so that we pass to PyTorch models
+    - Class imbalance is a common problem
+- Neural Network in PyTorch
+    - Extend the nn.Module base class
+    - Define layers as class attributes
+    - Implement the forward() method
+-For each layer
+    - Weight tensor + forward function definition
+    - Parameters as place holders
+    - Arguments are what we pass to the function
+    - Parameters are like local variables and arguments are what give values to parameters
+
+
+#### Two Types of Parameters
+- Hyperparameters
+    - values are chosen manually and arbitrarily
+    - based on trial and error 
+    - utilize values that have proven to work well in the past
+    - Kernel_size => sets the filter size
+        - convolutional kernel/filter
+        - size to perform the convolution operation
+        - produces an output_channel
+        - setting the number of filters
+        - out_channels are also called feature maps
+            - in linear layers, out_channels are called out_features
+    - Trend is in CNN, increase out_channels as layers increase
+        - When you get to linear layers, decrease out_channels to narrow down
+- Data dependent hyperparameters
+    - whose values depend on the data
+    - the in_channels and in_features are data dependent hyper parameters
+    - When we switch from conv layers to linear layers, we have to flatten
+
+
+## Learnable Parameters
+- Learnable parameters are parameters whose values are learned during the training process.
+    - We start out with a set of values and those values are updated in an iterative fashion as the network learns
+    - When a network learns, we mean that the network is learning the correct values for the learnable parameter
+- __repr__() is a method built for official string representation for an obejct
+- stride tells the conv layer how far the kernel_layer should slide
+- All filters are represented using a single tensor
+- Filters have a depth that accoutns for the color channels
+- Weight matrix is multiplied w the input layer which results in a diminished output layer
